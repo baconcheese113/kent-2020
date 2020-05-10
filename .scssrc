@@ -1,0 +1,4 @@
+{
+  "browsers": ["ie > ", "iOS > 8", "Android >= 4.4", "ff > 38", "Chrome > 38"],
+  "outdir": "public/css"
+}
