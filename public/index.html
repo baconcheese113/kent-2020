@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,500&=Roboto:wght@400;700&=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css" type="text/css" />
   <title>Kent For Senate 2020</title>
 </head>
@@ -12,10 +14,14 @@
   <nav class="mainNav">
     <div class="mainNav-left">
       <a target="_blank" rel="noopener noreferrer" href="https://donorbox.org/gaylon-kent-for-us-senate" class="cta-contribute">CONTRIBUTE</a>
+      <a href="/public/" class="mainNav-logo active">
+        <img src="./svg/gaylon_kent_logo.svg" alt="Home logo">
+      </a>
     </div>
+    
     <div class="mainNav-right">
-      <a href="./about.html">ABOUT</a>
-      <a href="./issues.html">ISSUES</a>
+      <a href=./about.html>ABOUT</a>
+      <a href=./issues.html>ISSUES</a>
       <a target="_blank" rel="noopener noreferrer" href="https://www.lp.org/">LP.ORG</a>
     </div>
   </nav>
@@ -32,21 +38,20 @@
     <div class="separator"></div>
 
     <div class="card">
-      <div class="card-image-container"><img
+      <div class="card-image-container"><img id="news-img"
           src="https://d2eehagpk5cl65.cloudfront.net/img/c800x450-w800-q80/uploads/2020/05/upiphotostwo742361-800x450.jpg"
           alt=""></div>
       <div class="card-body">
         <div class="card-body-container">
           <h6 class="card-body-title">In The News</h6>
           <p class="card-body-date">
-            <span>April 17th, 2020</span>
-            <span>12:54PM</span>
+            <span id="news-time">April 17th, 2020</span>
           </p>
-          <p class="card-body-subtitle">Did Mitigation Save Two Million Lives?</p>
-          <p class="card-body-content">In the April 16 White House briefing, President Trump again said, as he often has
+          <p class="card-body-subtitle" id="news-title">Did Mitigation Save Two Million Lives?</p>
+          <p class="card-body-content" id="news-snippet">In the April 16 White House briefing, President Trump again said, as he often has
             before, than "models predicted between 1.5 and 2.2 million...</p>
           <div class="card-body-footer">
-            <a href="#" class="card-body-cta">Read More ></a>
+            <a href="#" id="news-link" class="card-body-cta">Read More ></a>
           </div>
         </div>
       </div>
@@ -57,21 +62,43 @@
         <span class="active">Take Action</span>
         <span>On The Issues</span>
       </div>
-      <div class="take-action-cards">
-        <div class="btn-card">
-          <img src="./svg/isw_logo.svg" alt="isidewith.com logo">
-          <p class="btn-card-snippet">How do your beliefs align with the potential candidates?</p>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.isidewith.com/" class="btn-card-cta">Take the Quiz!</a>
+      <div class="tabs-content">
+        <div class="take-action-cards active">
+          <div class="btn-card">
+            <img src="./svg/isw_logo.svg" alt="isidewith.com logo">
+            <p class="btn-card-snippet">How do your beliefs align with the potential candidates?</p>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.isidewith.com/" class="btn-card-cta">Take the Quiz!</a>
+          </div>
+          <div class="btn-card">
+            <img src="./svg/ballotpedia_logo.svg" alt="ballotpedia.org logo">
+            <p class="btn-card-snippet">Be informed about federal, state, and local politics. Do you know what is on your
+              ballot?</p>
+            <a target="_blank" rel="noopener noreferrer" href="https://ballotpedia.org/Sample_Ballot_Lookup" class="btn-card-cta">Find Out!</a>
+          </div>
         </div>
-        <div class="btn-card">
-          <img src="./svg/ballotpedia_logo.svg" alt="ballotpedia.org logo">
-          <p class="btn-card-snippet">Be informed about federal, state, and local politics. Do you know what is on your
-            ballot?</p>
-          <a target="_blank" rel="noopener noreferrer" href="https://ballotpedia.org/Sample_Ballot_Lookup" class="btn-card-cta">Find Out!</a>
+        <div class="on-issues">
+          <div class="on-issues-cards">
+            <div class="icon-card">
+              <img src="./svg/home_our_violent_government.svg" alt="Our violent government" class="icon-card-img">
+              <p class="icon-card-label">Our Violent Government</p>
+            </div>
+            <div class="icon-card">
+              <img src="./svg/home_war_on_drugs.svg" alt="War on drugs" class="icon-card-img">
+              <p class="icon-card-label">The War On Drugs</p>
+            </div>
+            <div class="icon-card">
+              <img src="./svg/home_healthcare.svg" alt="Heathcare" class="icon-card-img">
+              <p class="icon-card-label">Healthcare</p>
+            </div>
+          </div>
+          <a href="/issues" class="on-issues-cta">view more issues</a>
         </div>
       </div>
     </section>
 
+    <script src="./tabSwitcher.js"></script>
+    <!-- <script src="./populateFeed.js"></script> -->
+    
     <div class="card">
       <div class="card-body">
         <div class="card-body-container">
@@ -80,12 +107,13 @@
           <p class="card-body-content">Gaylon served America honorably - if utterly without distinction - in the United
             States Navy (1983-87), serving in an old diesel submarine...</p>
           <div class="card-body-footer">
-            <a href="#" class="card-body-cta">Read More ></a>
+            <a href="/about" class="card-body-cta">Read More ></a>
           </div>
         </div>
       </div>
       <div class="card-image-container"><img src="./images/gaylon_kent_about.jpg" alt="Gaylon Kent"></div>
     </div>
+
 
     <section class="contact">
       <h4 class="contact-title">CONTACT GAYLON</h4>
@@ -123,6 +151,6 @@
       </div>
     </section>
   </main>
-</body>
 
+</body>
 </html>

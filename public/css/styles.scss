@@ -1,5 +1,6 @@
 * {
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 html {
@@ -50,38 +51,62 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 48px;
   position: fixed;
   background-color: #191919;
-  font-size: 16px;
+  font-size: 14px;
   z-index: 100;
 
   a {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    
+    &.active {
+      background-color: #e5c60155;
+    }
   }
 
   &-logo {
-    height: 48px;
-    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    // margin-left: 16px;
     
     img {
-      height: 100%;
+      height: 90%;
     }
   }
 
   &-left {
     display: flex;
     justify-self: flex-start;
+    overflow: hidden;
 
     .cta-contribute {
       background-color: #e5c601;
       color: inherit;
+      transition: all .4s;
+
+      &:hover {
+        background-color: #191919;
+        color: #e5c601;
+        transform: scale(1.1);
+      }
     }
   }
   &-right {
     display: flex;
     justify-self: flex-end;
+    overflow: hidden;
 
     & a {
       color: #e5c601;
+      transition: all .4s;
+      
+      &:hover {
+        transform: scale(1.1);
+        background-color: #e5c60155;
+      }
     }
   }
 }
@@ -167,11 +192,21 @@ body {
       color: rgba(255, 255, 255, .6);
       margin: 16px;
       padding: 8px;
+      cursor: pointer;
       border-bottom: 2px solid transparent;
+
       &.active {
         color: #fff;
         border-bottom: 2px solid #fff;
       }
+    }
+  }
+
+  & .tabs-content > div {
+    display: none;
+
+    &.active {
+      display: flex;
     }
   }
 
@@ -189,6 +224,7 @@ body {
       height: 200px;
 
       &-snippet {
+        font-size: 14px;
         color: #fff;
         flex: 1;
       }
@@ -201,6 +237,59 @@ body {
         font-weight: bold;
         padding: 12px;
       }
+    }
+  }
+
+  & .on-issues {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-cards {
+      display: flex;
+      justify-content: center;
+
+      .icon-card {
+        position: relative;
+        background-color: #000;
+        width: 25vw;
+        height: 25vw;
+        margin: 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        overflow: hidden;
+
+        img {
+          object-fit: contain;
+        }
+
+        &-label {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #e5c601cc;
+          color: #000;
+          font-size: 18px;
+          opacity: 0;
+          transition: all .4s;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &-cta {
+      color: #e5c601;
+      font-size: 18px;
+      margin-top: 32px;
     }
   }
 }
@@ -509,13 +598,17 @@ body {
   justify-content: center;
   align-items: center;
   padding: 24px 0;
-
+  
   &-name {
+    font-family: 'Lora', serif;
+    font-weight: 400;
     margin: 8px;
-    font-size: 20px;
+    font-size: 26px;
   }
   &-phone {
+    font-family: 'Lora', serif;
+    font-weight: 400;
     margin: 4px;
-    font-size: 18px;
+    font-size: 20px;
   }
 }
