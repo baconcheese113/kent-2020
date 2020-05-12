@@ -114,17 +114,18 @@ body {
 /********************************* HOME ****************************/
 .card {
   display: flex;
+  flex-wrap: wrap;
   margin: 80px auto;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0,0,0,.4);
   width: 800px;
-  height: 300px;
-  max-width: 90%;
+  max-width: 95%;
   overflow: hidden;
 
   &-image-container {
     flex: 1;
     overflow: hidden;
+    flex-basis: 300px;
     
     & img {
       width: 100%;
@@ -141,6 +142,7 @@ body {
     flex: 1;
     padding: 16px;
     font-size: 16px;
+    flex-basis: 300px;
 
     &-container {
       display: flex;
@@ -170,6 +172,7 @@ body {
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      min-height: 80px;
     }
     &-cta {
       color: #e5c601;
