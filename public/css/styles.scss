@@ -56,7 +56,15 @@ body {
   z-index: 100;
 
   a {
-    padding: 16px 32px;
+  }
+
+  &-logo {
+    height: 48px;
+    margin-left: 16px;
+    
+    img {
+      height: 100%;
+    }
   }
 
   &-left {
@@ -66,7 +74,6 @@ body {
     .cta-contribute {
       background-color: #e5c601;
       color: inherit;
-
     }
   }
   &-right {
@@ -273,6 +280,166 @@ body {
         height: 100%;
       }
     }
+  }
+}
+
+/********************************* ISSUES ****************************/
+.action {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  height: 400px;
+  margin-top: 24px;
+  background-color: #191919;
+
+  &-card {
+    width: 49.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    background-color: red;
+
+    &-contents {
+      background-color: transparent;
+      font-size: 16px;
+      width: 80%;
+      text-align: center;
+      z-index: 5;
+    }
+
+    &-title {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    &-bg-container {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      overflow: hidden;
+      background: #e5c601;
+      z-index: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom, #000000cc, #e5c601dd);
+      }
+
+      img {
+        transform: scale(1.8);
+        height: 100%;
+        z-index: -1;
+      }
+    }
+
+    &-cta {
+      padding: 16px;
+      width: 50%;
+      text-align: center;
+      margin-top: 12px;
+      border: 1px solid #fff;
+      color: inherit;
+      z-index: 5;
+    }
+  }
+}
+
+.issues {
+  padding: 32px 16px;
+  background-color: #191919;
+  color: #fff;
+
+  &-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &-card {
+      flex-basis: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 64px 32px;
+      font-size: 14px;
+      text-align: center;
+
+      &.half {
+        flex-basis: 30%;
+      }
+
+      &-title {
+        font-size: 18px;
+      }
+
+      &-snippet {
+        font-size: 14px;
+      }
+
+      &-img-container {
+        height: 200px;
+        width: 200px;
+
+        &.half {
+          height: 250px;
+          width: 250px;
+        }
+      }
+    }
+
+    &-card-full {
+      flex-basis: 100%;
+      display: flex;
+      font-size: 14px;
+
+      &-contents {
+        flex: .7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-title {
+        font-size: 20px;
+      }
+
+      &-snippet {
+        width: 50%;
+        text-align: center;
+      }
+
+      &-img-container {
+        flex: 1;
+        height: auto;
+        width: auto;
+      }
+    }
+
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
 }
 
