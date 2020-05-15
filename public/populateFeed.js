@@ -12,7 +12,6 @@ async function setArticle() {
   const doc = parser.parseFromString(pageRes.data, 'text/html')
 
   const firstPost = doc.querySelector('.rcom-list-content--article.published')
-  console.log('firstPost', firstPost)
   const anchorTag = firstPost.querySelector('a')
   const linkUrl = anchorTag.getAttribute('href')
   newsLink.setAttribute('href', linkUrl)
