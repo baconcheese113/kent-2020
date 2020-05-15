@@ -20,11 +20,24 @@
       </a>
     </div>
     <div class="mainNav-right">
-      <a href="/about">ABOUT</a>
-      <a href="" class="active">ISSUES</a>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.lp.org/">LP.ORG</a>
+      <div class="mainNav-right-mobile">
+        <a id="mainNav-right-menu" href="#">Menu</a>
+      </div>
+      <div class="mainNav-right-full">
+        <a href="/about">ABOUT</a>
+        <a href="#" class="active">ISSUES</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.lp.org/">LP.ORG</a>
+      </div>
     </div>
   </nav>
+  
+  <div class="fullNav" id="fullNav">
+    <div class="fullNav-row"><a id="fullNav-close" href="#">X</a></div>
+    <div class="fullNav-row"><a href="./index.html">HOME</a></div>
+    <div class="fullNav-row"><a href="#" class="active">ABOUT</a></div>
+    <div class="fullNav-row"><a href="/issues">ISSUES</a></div>
+    <div class="fullNav-row"><a target="_blank" rel="noopener noreferrer" href="https://www.lp.org/">LP.ORG</a></div>
+  </div>
 
   <main class="main">
 
@@ -184,6 +197,8 @@
       </div>
     </section>
   </main>
+
+  <script src="navMenu.js"></script>
 </body>
 
 </html>
