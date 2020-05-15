@@ -16,14 +16,11 @@ body {
 }
 
 .banner {
-  height: 90vh;
-
   img {
-    position: fixed;
-    z-index: -1;
-    max-width: 80%;
-    height: 440px;
-    margin-left: 15%;
+    max-width: 90%;
+    max-height: 400px;
+    margin-left: 5%;
+    margin-top: 48px;
   }
 }
 
@@ -44,13 +41,12 @@ body {
 .background-img-fixed {
   z-index: -1;
   position: fixed;
+  top: 48px;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: 60% 0;
   filter: grayscale(1);
-  transform: scale(2);
-  transform-origin: top;
 }
 
 .mainNav {
@@ -76,7 +72,6 @@ body {
   &-logo {
     display: flex;
     align-items: center;
-    // margin-left: 16px;
     
     img {
       height: 90%;
