@@ -169,6 +169,21 @@ body {
   max-width: 95%;
   overflow: hidden;
 
+  &-loading {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    height: 300px;
+    opacity: .5;
+  }
+
+  &-loaded {
+    display: none;
+    flex-wrap: wrap;
+  }
+
   &-image-container {
     flex: 1;
     overflow: hidden;

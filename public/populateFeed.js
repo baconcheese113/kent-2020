@@ -1,5 +1,7 @@
 const PROXY_URL = 'https://cors-anywhere.herokuapp.com/'
 
+const cardLoaded = document.querySelector('.card-loaded')
+const cardLoading = document.querySelector('.card-loading')
 const newsDate = document.querySelector('#news-time')
 const newsTitle = document.querySelector('#news-title')
 const newsSnippet = document.querySelector('#news-snippet')
@@ -23,6 +25,9 @@ async function setArticle() {
   newsSnippet.innerText = snippet
   const imgUrl = firstPost.querySelector('img').getAttribute('data-lazy-srcset').split(' ')[0]
   newsImg.setAttribute('src', imgUrl)
+
+  cardLoaded.style.display = 'flex'
+  cardLoading.style.display = 'none'
 }
 
 setArticle()

@@ -7,13 +7,11 @@ function openMenu(e) {
   if(!fullNav.classList.contains('active')) {
     fullNav.classList.add('active')
   }
-  // e.preventDefault()
 }
 function closeMenu(e) {
   if(fullNav.classList.contains('active')) {
     fullNav.classList.remove('active')
   }
-  // e.preventDefault()
 }
 
 menuButton.addEventListener('click', openMenu)
